@@ -9,5 +9,7 @@ jobs:
           name: Install dependencies
           command: pip install -r requirements.txt
       - run:
-          name: Running Tests
-          command: coverage run -m unittest && coverage xml && coverage  report -m python_app/
+          name: Running tests
+          command: |
+            . env/bin/activate
+            python3 python_app/test.py
